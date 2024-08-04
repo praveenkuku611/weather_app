@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Display</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('night.png'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            color: #fff; /* Text color for readability */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            padding: 10px;
+            width: calc(100% - 24px);
+            margin-bottom: 10px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #0056b3;
+        }
+
+        button {
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #weather {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(248, 249, 250, 0.9); /* Slightly transparent background */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .temperature {
+            font-size: 2em;
+            color: #333;
+        }
+
+        .description {
+            font-size: 1.2em;
+            color: #555;
+        }
+        #description {
+            color:skyblue;
+            font-size: 40px;
+        }
+        #city-heading{
+            color: rgb(0, 157, 255);
+            font-size: 45px;
+            font-family: sans-serif;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+        <label for="cityInput" id= "city-heading">Weather Report</label>
+        <input type="text" id="cityInput" name="cityName" placeholder="Enter City Name">
+        <button type="submit">Get</button>
+        <div id="weather">
+           <p id="description">The Temperature is  :<%= temp %></p>
+        </div>
+        </form>
+    </div>
+</body>
+</html>
